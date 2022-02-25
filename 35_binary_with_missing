@@ -1,0 +1,68 @@
+public class Solution {
+    public int SearchInsert(int[] nums, int target) {
+        //binary search algorithm
+        int left, mid, right = 0;
+        // length of 1 case
+        if(nums.Length == 1) {
+            if (nums[0] == target) {
+                return 0;
+            }
+            else if (nums[0] > target) {
+                return 0;
+            }
+            else {
+                return 1;
+            }
+        }
+        //normal case with length of 2 or more:
+        left = 0;
+        right = nums.Length - 1;
+        mid = (left+right)/2;
+        Console.WriteLine($"Initial : {left}, {mid}, {right}");
+        
+        while (nums[mid] != target && right - left >= 1) {
+            //shortcuts if we found the target in either of the indexes:
+            if(target == nums[left]){
+                return left;
+            }
+            if (target == nums[mid]){
+                return mid;
+            }
+            if (target == nums[right]){
+                return right;
+            }
+            
+            // Normal case 1:
+            // *---target ---*mid*-----*
+            if (target < nums[mid]) {
+                right = mid;
+                mid = (left+right) / 2;
+                Console.WriteLine($"case 1 : {left}, {mid}, {right}");
+            }
+            //Normal case 2:
+            //*----*mid*----target----*
+            else if (target > nums[mid]) {
+                left = mid;
+                mid = (left+right) / 2;
+                Console.WriteLine($"case 2 : {left}, {mid}, {right}");
+            }
+            //check for "possible place":
+            if (right - left <= 2) {
+                if(target > nums[mid] && target < nums[right]){
+                    return right;
+                }
+                else if ( target> nums[mid] && target > nums[right]){
+                    return right + 1;
+                }
+                else if (target< nums[mid] && target > nums[left]){
+                    return mid;
+                }
+                else if (target < nums[mid] && target < nums[left]){
+                    return left;
+                }
+            }
+        }
+        return mid;
+        
+    }
+}
