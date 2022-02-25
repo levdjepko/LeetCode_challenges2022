@@ -3,37 +3,50 @@
 
 public class Solution : VersionControl {
     public int FirstBadVersion(int n) {
-        int left, mid, right = 0;
+        long left, mid, right = 0;
         if (n == 1) {
             if (IsBadVersion(n) == true) {
+                Console.WriteLine("Here");
                 return n;
             }
+        }
+        else if (IsBadVersion(1) == true) {
+                Console.WriteLine("Here");
+                return 1;
         }
         else {
             left = 1;
             right = n ;
-            mid = (left+right)/2;
-            while (IsBadVersion(mid) == false && (right-left) > 2) {
-                if(IsBadVersion(right) == true && IsBadVersion(mid) == true) {
+            mid = (long)((double)(left+right)/2.0);
+            
+            Console.WriteLine($"first: {left}, {mid}, {right}");
+            while ((right-left) > 2) {
+                //Console.WriteLine($"STAT FOR: {left}, {mid}, {right}; {IsBadVersion(left)},{IsBadVersion(mid)},{IsBadVersion(right)} ");
+                if(IsBadVersion((int)right) == true && IsBadVersion((int)mid) == false) {
                     left = mid;
-                    mid = (left+right)/2;
-                    Console.WriteLine($"IF1: {left}, {mid}, {right}");
+                    mid = (long)((double)(left+right)/2.0);
+                    //Console.WriteLine($"IF1: {left}, {mid}, {right}");
+                    
                 }
-                else if (IsBadVersion(left) == true && IsBadVersion(mid) == false){
+                else if (IsBadVersion((int)left) == false && IsBadVersion((int)mid) == true){
                     right = mid;
-                    mid = (left+right)/2;
-                    Console.WriteLine($"IF2: {left}, {mid}, {right}");
+                    mid = (long)((double)(left+right)/2.0);
+                    //Console.WriteLine($"IF2: {left}, {mid}, {right}");
+                    
                 }
-                else if (IsBadVersion(mid) == true && IsBadVersion(mid-1) == false){
-                    return mid;
-                    Console.WriteLine($"IF3: {left}, {mid}, {right}");
-                }
-                else if (IsBadVersion(mid) == false && IsBadVersion(mid+1) == true){
-                    return (mid + 1);
-                    Console.WriteLine($"IF4: {left}, {mid}, {right}");
-                }
+                
+              
             }
-            return mid;
+            if(IsBadVersion((int)left) == true) {
+                return (int)left;
+            }
+            if(IsBadVersion((int)mid) == true) {
+                return (int)mid;
+            }
+            if(IsBadVersion((int)right) == true) {
+                return (int)right;
+            }
+            
         }
         return -1;
     }
