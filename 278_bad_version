@@ -1,0 +1,40 @@
+/* The isBadVersion API is defined in the parent class VersionControl.
+      bool IsBadVersion(int version); */
+
+public class Solution : VersionControl {
+    public int FirstBadVersion(int n) {
+        int left, mid, right = 0;
+        if (n == 1) {
+            if (IsBadVersion(n) == true) {
+                return n;
+            }
+        }
+        else {
+            left = 1;
+            right = n ;
+            mid = (left+right)/2;
+            while (IsBadVersion(mid) == false && (right-left) > 2) {
+                if(IsBadVersion(right) == true && IsBadVersion(mid) == true) {
+                    left = mid;
+                    mid = (left+right)/2;
+                    Console.WriteLine($"IF1: {left}, {mid}, {right}");
+                }
+                else if (IsBadVersion(left) == true && IsBadVersion(mid) == false){
+                    right = mid;
+                    mid = (left+right)/2;
+                    Console.WriteLine($"IF2: {left}, {mid}, {right}");
+                }
+                else if (IsBadVersion(mid) == true && IsBadVersion(mid-1) == false){
+                    return mid;
+                    Console.WriteLine($"IF3: {left}, {mid}, {right}");
+                }
+                else if (IsBadVersion(mid) == false && IsBadVersion(mid+1) == true){
+                    return (mid + 1);
+                    Console.WriteLine($"IF4: {left}, {mid}, {right}");
+                }
+            }
+            return mid;
+        }
+        return -1;
+    }
+}
