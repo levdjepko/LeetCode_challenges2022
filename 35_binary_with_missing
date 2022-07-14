@@ -32,7 +32,7 @@ public class Solution {
                 return right;
             }
             
-            // Normal case 1:
+            //  Normal case 1: 
             // *---target ---*mid*-----*
             if (target < nums[mid]) {
                 right = mid;
