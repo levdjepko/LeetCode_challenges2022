@@ -2,20 +2,29 @@ class Solution {
     public boolean isValidSudoku(char[][] board) {
         // check if Sudoku board is valid
         // check rows:
-        int[] check = new int[20];
-        Arrays.fill(check, 0);
+        
         boolean validBoard = true;
         
-        for (int i = 0; i < board.length && validBoard; i++) {
-            Arrays.fill(check, 0);
-            for (int column = 0; column < board[i].length && validBoard; column++) {
-                if (Character.isDigit(board[i][column])){
-                    check[(int)board[i][column]]++;
-                }
-                if (check[(int)board[i][column]] > 1) {
-                    validBoard = false;
-                }
+        HashSet<String> set = new HashSet<>();
+        
+        for (int i = 0; i < 9; i++) {
+            for (int j = 0; j < 9; j++) {
+                // iterate over every position on the board
+                char currentChar = board[i][j];
+                if (currentChar == '.') {
+                    continue;
+                } else {
+                    
+                    if(!set.add(currentChar + " found in row " + i) ||
+                        !set.add(currentChar + " found in column " + j) ||
+                        !set.add(currentChar + " found in sub Box " + i/3 + j/3))
+                        return false;
+                    }
+   
             }
         }
+        
+        
         return validBoard;
+    }
 }
