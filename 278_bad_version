@@ -21,7 +21,6 @@ public class Solution : VersionControl {
             
             Console.WriteLine($"first: {left}, {mid}, {right}");
             while ((right-left) > 2) {
-                //Console.WriteLine($"STAT FOR: {left}, {mid}, {right}; {IsBadVersion(left)},{IsBadVersion(mid)},{IsBadVersion(right)} ");
                 if(IsBadVersion((int)right) == true && IsBadVersion((int)mid) == false) {
                     left = mid;
                     mid = (long)((double)(left+right)/2.0);
@@ -31,8 +30,7 @@ public class Solution : VersionControl {
                 else if (IsBadVersion((int)left) == false && IsBadVersion((int)mid) == true){
                     right = mid;
                     mid = (long)((double)(left+right)/2.0);
-                    //Console.WriteLine($"IF2: {left}, {mid}, {right}");
-                    
+                    //Console.WriteLine($"IF2: {left}, {mid}, {right}");     
                 }
                 
               
