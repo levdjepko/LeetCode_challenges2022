@@ -8,7 +8,7 @@ public class Solution {
                 return -1;
             }
         } else if (nums.Length == 2) {
-            if(target == nums[0]){
+            if (target == nums[0]){
                 return 0;
             }
             else if (target == nums[1]) {
@@ -20,8 +20,8 @@ public class Solution {
         }
         int start = 0;
         int end = nums.Length;
-        int middle = nums.Length/2;
-            //Console.WriteLine($"{start}, {middle}, {end}");
+        int middle = nums.Length / 2;
+            // Console.WriteLine($"{start}, {middle}, {end}");
         int found = 0;
         if (target == nums[start]) {
             return start;
