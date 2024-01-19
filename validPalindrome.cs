@@ -1,4 +1,3 @@
-
 using System.Text.RegularExpressions;
 
 Console.WriteLine(IsPalindrome("AA22AA $.  -- __"));
