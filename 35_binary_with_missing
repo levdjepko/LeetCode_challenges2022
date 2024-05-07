@@ -1,6 +1,6 @@
 public class Solution {
     public int SearchInsert(int[] nums, int target) {
-        //binary search algorithm
+        // binary search algorithm
         int left, mid, right = 0;
         // length of 1 case
         if(nums.Length == 1) {
@@ -14,14 +14,14 @@ public class Solution {
                 return 1;
             }
         }
-        //normal case with length of 2 or more:
+        // a normal case with a length of 2 or more:
         left = 0;
         right = nums.Length - 1;
         mid = (left+right)/2;
         Console.WriteLine($"Initial : {left}, {mid}, {right}");
         
         while (nums[mid] != target && right - left >= 1) {
-            //shortcuts if we found the target in either of the indexes:
+            // shortcuts if we found the target in either of the indexes:
             if(target == nums[left]){
                 return left;
             }
