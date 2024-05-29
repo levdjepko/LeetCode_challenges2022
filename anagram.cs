@@ -1,3 +1,4 @@
+// compare two strings to see if they are anagrams to one another
 public class Solution {
     public bool IsAnagram(string s, string t) {
         bool result = true;
