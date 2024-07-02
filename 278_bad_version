@@ -1,5 +1,7 @@
-/* The isBadVersion API is defined in the parent class VersionControl.
-      bool IsBadVersion(int version); */
+/* 
+The isBadVersion API is defined in the parent class VersionControl.
+      bool IsBadVersion(int version); 
+*/
 
 public class Solution : VersionControl {
     public int FirstBadVersion(int n) {
@@ -9,12 +11,10 @@ public class Solution : VersionControl {
                 Console.WriteLine("Here");
                 return n;
             }
-        }
-        else if (IsBadVersion(1) == true) {
+        } else if (IsBadVersion(1) == true) {
                 Console.WriteLine("Here");
                 return 1;
-        }
-        else {
+        } else {
             left = 1;
             right = n ;
             mid = (long)((double)(left+right)/2.0);
