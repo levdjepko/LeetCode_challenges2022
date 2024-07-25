@@ -8,7 +8,7 @@ public class Solution {
         }
         foreach (char c in s) {
             if (!hash.Contains(c)) {
-                // add the key from original string
+                // Add the key from original string
                 hash.Add(c, 1);
             } else {
                 int counter = (int)hash[c];
@@ -17,7 +17,7 @@ public class Solution {
         }
         
         foreach (char c in t){
-            // if any of the letters is missing or the count is wrong, set result to false and break
+            // If any of the letters is missing or the count is wrong, set result to false and break
             if (hash.Contains(c)){
                 int counter = (int)hash[c];
                 if (counter <= 0){
