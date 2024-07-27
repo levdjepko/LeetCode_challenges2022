@@ -25,7 +25,7 @@ public int[] intersect(int[] nums1, int[] nums2) {
                 
         }
         
-        //convert from list to array
+        // convert from list to array
         Integer [] array = resultsList.toArray(new Integer[0]);
         return resultsList.stream()
             .mapToInt(Integer::intValue)
