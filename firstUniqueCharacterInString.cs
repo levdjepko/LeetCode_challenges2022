@@ -12,7 +12,7 @@ public class Solution {
         }
     }
     // iterate over the dictionary again and find the first non -1 item
-    foreach (var item in hs.Keys)
+    foreach(var item in hs.Keys)
     {
         var value = hs[item];
         if (value != -1)
