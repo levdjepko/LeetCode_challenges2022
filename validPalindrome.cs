@@ -1,8 +1,8 @@
 using System.Text.RegularExpressions;
-
+// test case
 Console.WriteLine(IsPalindrome("AA22AA $.  -- __"));
 
- bool IsPalindrome(string s)
+bool IsPalindrome(string s)
 {
     string cleanedString = Regex.Replace(s, "[^a-zA-Z0-9]+", "").ToLower();
     Console.WriteLine(cleanedString);
