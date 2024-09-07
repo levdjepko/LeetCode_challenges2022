@@ -21,7 +21,8 @@ public class Solution {
         int start = 0;
         int end = nums.Length;
         int middle = nums.Length / 2;
-            // Console.WriteLine($"{start}, {middle}, {end}");
+        
+        // Console.WriteLine($"{start}, {middle}, {end}");
         int found = 0;
         if (target == nums[start]) {
             return start;
