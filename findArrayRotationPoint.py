@@ -4,16 +4,16 @@ import unittest
 def find_rotation_point(words):
 
     # Find the rotation point in the list
-    #   words = ['k', 'v', 'a', 'b', 'c', 'd', 'e', 'g', 'i']
-    # this is mostly sorted array with a rotation point somewhere in the middle
-    # we will use a binary search to effectively find the rotation point
+    #  words = ['k', 'v', 'a', 'b', 'c', 'd', 'e', 'g', 'i']
+    # This is mostly a sorted array with a rotation point somewhere in the middle
+    # We will use a binary search to find the rotation point effectively
     left = 0
     right = len(words) - 1
     
     first_letter = words[0]
     
     while (left < right):
-        #left ------ middle -----right
+        # left ------ middle -----right
         middle = left + (right - left) // 2
         
         if words[middle] >= first_letter:
