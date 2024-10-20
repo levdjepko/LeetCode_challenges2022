@@ -1,5 +1,6 @@
 class Solution {
     public int singleNumber(int[] nums) {
+        // find the first digit in the array that doesn't have a repeat
         HashMap <Integer, Integer> hm = new HashMap<>();
         int result = -1;
         for (int i = 0; i < nums.length; i++) {
