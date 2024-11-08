@@ -2,8 +2,8 @@ public class Solution {
     public int SearchInsert(int[] nums, int target) {
         // binary search algorithm
         int left, mid, right = 0;
-        // length of 1 case
-        if(nums.Length == 1) {
+        // length == 1 case
+        if (nums.Length == 1) {
             if (nums[0] == target) {
                 return 0;
             }
@@ -39,14 +39,14 @@ public class Solution {
                 mid = (left+right) / 2;
                 Console.WriteLine($"case 1 : {left}, {mid}, {right}");
             }
-            //Normal case 2:
-            //*----*mid*----target----*
+            // Normal case 2:
+            // *----*mid*----target----*
             else if (target > nums[mid]) {
                 left = mid;
                 mid = (left+right) / 2;
                 Console.WriteLine($"case 2 : {left}, {mid}, {right}");
             }
-            //check for "possible place":
+            // check for "possible place":
             if (right - left <= 2) {
                 if(target > nums[mid] && target < nums[right]){
                     return right;
