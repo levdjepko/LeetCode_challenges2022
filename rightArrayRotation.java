@@ -1,4 +1,5 @@
 class Solution {
+    // rotate an array for K elements to the right
     public void rotate(int[] nums, int k) {
         int[] newArray = nums.clone();
         if (k > nums.length) {
