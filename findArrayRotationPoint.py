@@ -7,6 +7,7 @@ def find_rotation_point(words):
     #  words = ['k', 'v', 'a', 'b', 'c', 'd', 'e', 'g', 'i']
     # This is mostly a sorted array with a rotation point somewhere in the middle
     # We will use a binary search to find the rotation point effectively
+    
     left = 0
     right = len(words) - 1
     
