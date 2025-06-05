@@ -1,4 +1,5 @@
 public int MaximumWealth(int[][] accounts) {
+        // returns the maximum wealth
         int maxW = 0;
         int currentW = 0;
         for (int i = 0; i < accounts.Length; i++) {
