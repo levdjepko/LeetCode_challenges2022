@@ -1,5 +1,7 @@
 public int[] intersect(int[] nums1, int[] nums2) {
+        
         HashMap <Integer, Integer> map = new HashMap<>();
+        List <Integer> resultsList = new ArrayList();
         
         // get all the elements of the first array in a hashmap
         for (int i = 0; i < nums1.length; i++) {
@@ -10,8 +12,7 @@ public int[] intersect(int[] nums1, int[] nums2) {
                 map.put(nums1[i], count + 1);
             }
         }
-        List <Integer> resultsList = new ArrayList();
-  
+          
         // check all the elements of the second array
         for (int i = 0; i < nums2.length; i++) {
             if (map.containsKey(nums2[i])){
@@ -21,8 +22,7 @@ public int[] intersect(int[] nums1, int[] nums2) {
                     count--;
                     map.put(nums2[i], count);
                 }
-            }
-                
+            }                
         }
         
         // convert from list to array
