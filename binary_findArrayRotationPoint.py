@@ -22,7 +22,7 @@ def find_rotation_point(words):
         else:
             right = middle
         
-        # did we find the point?
+        # Did we find the point?
         if left + 1 == right:
             return right
 
