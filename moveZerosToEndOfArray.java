@@ -12,7 +12,7 @@ public void moveZeroes(int[] nums) {
 		        nums[i] = 0;                      
                 // next non-zero element to zero
 		        j++;                            
-                //  j++-->to check next zero element
+                //  j++ --> to check next zero element
 	        }
         }
     }
